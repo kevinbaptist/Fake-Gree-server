@@ -15,12 +15,12 @@ class GreeSrv:
         if not ip or not port or not hostname:
             print('* IP, Port and Hostname need to be set!')
             exit(1)
-        self.ip = ip
+        self.ip = '0.0.0.0'
         self.port = port
         self.hostname = hostname
         self.tls = eval(tls)
         self.srv = socket.socket(family=socket.AF_INET, type=socket.SOCK_STREAM)#SOCK_DGRAM)
-        self.cmd = self.Cmd(self.ip, self.port, self.hostname)
+        self.cmd = self.Cmd(ip, self.port, self.hostname)
         self.instruct()
         self.serve()
 
